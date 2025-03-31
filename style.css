@@ -1,0 +1,1128 @@
+/* Variables globales */
+:root {
+  --primary-dark: #1F2B33;
+  --primary-accent: #B23B3B;
+  --primary-light: #F7F1E8;
+  --secondary: #38645F;
+  --text-dark: #1F2B33;
+  --text-light: #F7F1E8;
+  --shadow: rgba(31, 43, 51, 0.1);
+  --font-primary: 'Libre Baskerville', serif;
+  --font-heading: 'Poppins', sans-serif;
+  --border-radius: 10px;
+}
+
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--primary-light);
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+/* Typographie */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Sélecteur de langue */
+.language-selector {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+.language-selector select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-dark);
+  background-color: white;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-selector select:hover {
+  border-color: var(--primary-accent);
+}
+
+/* Header et Navigation */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary-dark);
+  box-shadow: 0 2px 10px var(--shadow);
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  height: 65px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  color: var(--text-light);
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px var(--shadow);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-accent);
+  margin: 1.5rem auto;
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  position: relative;
+  white-space: nowrap;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary-accent);
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 80%;
+}
+
+/* Sections communes */
+section {
+  padding: 4rem 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+}
+
+.hero {
+  text-align: center;
+  padding: 7rem 2rem;
+  background: linear-gradient(rgba(31, 43, 51, 0.8), rgba(31, 43, 51, 0.8)),
+    url('hero-bg.jpg') center/cover;
+  color: var(--text-light);
+  margin-top: -100px;
+}
+
+.hero h2 {
+  font-size: 3.8rem;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2::after {
+  background-color: var(--text-light);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Boutons */
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--secondary);
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(31, 43, 51, 0.2);
+}
+
+/* Mission Section */
+.mission {
+  text-align: center;
+  background-color: white;
+  padding: 6rem 2rem;
+}
+
+.mission p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Actualités Preview */
+.actualites-preview {
+  background-color: var(--primary-light);
+  padding: 6rem 2rem;
+}
+
+.actualites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.actualite-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.actualite-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(31, 43, 51, 0.15);
+}
+
+.actualite-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+  line-height: 1.4;
+}
+
+.actualite-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.social-links {
+  margin-bottom: 2rem;
+}
+
+.social-links a {
+  color: var(--text-light);
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-accent);
+  transform: translateY(-3px);
+}
+
+/* Notice de clôture */
+.closure-notice {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-accent);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(31, 43, 51, 0.2);
+  animation: bounce 2s infinite;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fadeInUp.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .header-content {
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 0.5rem;
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .logo-container {
+    flex-direction: row;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .logo {
+    height: 55px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  nav a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  body {
+    padding-top: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0.5rem;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  body {
+    padding-top: 160px;
+  }
+}
+
+/* Styles pour la page Actualités */
+.actualites-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(31, 43, 51, 0.05), rgba(31, 43, 51, 0.05));
+}
+
+.actualites-hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.actualites-hero p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.articles-section {
+  padding: 4rem 2rem;
+}
+
+.articles-grid {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.article-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(31, 43, 51, 0.08);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(31, 43, 51, 0.12);
+}
+
+.article-header {
+  padding: 2rem;
+  background: linear-gradient(to right, var(--primary-dark), var(--primary-accent));
+  color: var(--text-light);
+}
+
+.article-header h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  line-height: 1.3;
+}
+
+.article-header h3::after {
+  display: none;
+}
+
+.article-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.article-content {
+  padding: 2rem;
+}
+
+.article-excerpt {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.article-full-content {
+  display: none;
+  padding: 0 2rem 2rem;
+  border-top: 1px solid rgba(31, 43, 51, 0.1);
+}
+
+.article-full-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.article-full-content .quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--primary-accent);
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-left: 4px solid var(--primary-accent);
+  background: rgba(178, 59, 59, 0.05);
+}
+
+.article-full-content h3 {
+  color: var(--primary-accent);
+  margin: 2rem 0 1rem;
+  font-size: 1.6rem;
+}
+
+.read-more-btn {
+  background-color: var(--secondary);
+  color: var(--text-light);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: var(--primary-accent);
+  transform: translateY(-2px);
+}
+
+/* Media Queries pour la page Actualités */
+@media (max-width: 768px) {
+  .actualites-hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .article-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .article-content,
+  .article-header {
+    padding: 1.5rem;
+  }
+
+  .article-full-content {
+    padding: 0 1.5rem 1.5rem;
+  }
+}
+
+/* Styles pour les citations */
+.quote {
+  position: relative;
+  padding: 2rem 3rem;
+  margin: 3rem 0;
+  background: linear-gradient(135deg, rgba(31, 43, 51, 0.03), rgba(178, 59, 59, 0.05));
+  border-left: 4px solid var(--primary-accent);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--primary-dark);
+  box-shadow: 0 4px 15px rgba(31, 43, 51, 0.05);
+}
+
+.quote::before {
+  content: '"';
+  position: absolute;
+  top: -1rem;
+  left: 2rem;
+  font-size: 4rem;
+  color: var(--primary-accent);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+}
+
+.quote::after {
+  content: '"';
+  position: absolute;
+  bottom: -1rem;
+  right: 2rem;
+  font-size: 4rem;
+  color: var(--primary-accent);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+}
+
+.quote-author {
+  display: block;
+  margin-top: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--primary-accent);
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+/* Media Queries pour les citations */
+@media (max-width: 768px) {
+  .quote {
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    margin: 2rem 0;
+  }
+
+  .quote::before,
+  .quote::after {
+    font-size: 3rem;
+  }
+
+  .quote-author {
+    font-size: 1rem;
+  }
+}
+
+/* Section Vision de la Francophonie */
+.francophonie-section {
+  background-color: var(--primary-light);
+  padding: 5rem 2rem;
+}
+
+.francophonie-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.francophonie-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+  color: var(--text-dark);
+}
+
+.francophonie-section strong {
+  color: var(--primary-accent);
+  font-weight: 700;
+}
+
+.francophonie-section em {
+  font-style: italic;
+  color: var(--secondary);
+}
+
+.vision-quote {
+  position: relative;
+  padding: 2rem 3rem;
+  margin: 3rem 0;
+  background: linear-gradient(135deg, rgba(31, 43, 51, 0.03), rgba(56, 100, 95, 0.05));
+  border-left: 4px solid var(--secondary);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--primary-dark);
+  box-shadow: 0 4px 15px rgba(31, 43, 51, 0.05);
+}
+
+.vision-quote em {
+  display: block;
+  margin-top: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 1rem;
+  text-align: right;
+}
+
+/* Media Queries pour la section Vision */
+@media (max-width: 768px) {
+  .francophonie-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .francophonie-section p {
+    font-size: 1rem;
+  }
+
+  .vision-quote {
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    margin: 2rem 0;
+  }
+
+  .vision-quote em {
+    font-size: 0.9rem;
+  }
+}
+
+/* Section Qui sommes-nous */
+.qui-sommes-nous {
+  padding: 5rem 2rem;
+  background-color: var(--primary-light);
+}
+
+.qui-sommes-nous .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.qui-sommes-nous h2 {
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  margin: 4rem 0 2rem;
+  text-align: left;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.qui-sommes-nous h2:first-child {
+  margin-top: 0;
+}
+
+.qui-sommes-nous h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-accent);
+  border-radius: 2px;
+}
+
+.qui-sommes-nous p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+  color: var(--text-dark);
+}
+
+.qui-sommes-nous blockquote {
+  position: relative;
+  padding: 2rem 3rem;
+  margin: 3rem 0;
+  background: linear-gradient(135deg, rgba(31, 43, 51, 0.03), rgba(178, 59, 59, 0.05));
+  border-left: 4px solid var(--primary-accent);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--primary-dark);
+  box-shadow: 0 4px 15px rgba(31, 43, 51, 0.05);
+}
+
+.qui-sommes-nous blockquote em {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--primary-accent);
+}
+
+.qui-sommes-nous blockquote br + em {
+  display: inline;
+  margin-bottom: 0;
+  color: var(--secondary);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Media Queries pour la section Qui sommes-nous */
+@media (max-width: 768px) {
+  .qui-sommes-nous {
+    padding: 4rem 1.5rem;
+  }
+
+  .qui-sommes-nous h2 {
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem;
+  }
+
+  .qui-sommes-nous p {
+    font-size: 1rem;
+  }
+
+  .qui-sommes-nous blockquote {
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    margin: 2rem 0;
+  }
+}
+
+/* Newsletter Form */
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid var(--secondary);
+  border-radius: var(--border-radius);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+}
+
+/* Section "Pourquoi nous rejoindre" */
+.join-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 1rem;
+}
+
+.join-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.join-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(31, 43, 51, 0.15);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .join-section {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Section Objectifs */
+.objectifs-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(31, 43, 51, 0.05), rgba(31, 43, 51, 0.05));
+}
+
+.objectifs-hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.objectifs-hero p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.objectifs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.objectif-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.objectif-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(31, 43, 51, 0.15);
+}
+
+.objectif-card i {
+  font-size: 2.5rem;
+  color: var(--primary-accent);
+  margin-bottom: 1.5rem;
+}
+
+.objectif-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.objectif-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* Media Queries pour la section Objectifs */
+@media (max-width: 768px) {
+  .objectifs-hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .objectifs-grid {
+    padding: 3rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .objectif-card {
+    padding: 1.5rem;
+  }
+
+  .objectif-card i {
+    font-size: 2rem;
+  }
+}
+
+/* Section Participer */
+.participer-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(rgba(31, 43, 51, 0.05), rgba(31, 43, 51, 0.05));
+}
+
+.participer-hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.participer-hero p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.participation-options {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.participation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.participation-card {
+  background: var(--primary-light);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.participation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(31, 43, 51, 0.15);
+}
+
+.participation-card i {
+  font-size: 2.5rem;
+  color: var(--primary-accent);
+  margin-bottom: 1.5rem;
+}
+
+.participation-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.participation-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.benefits-list {
+  list-style: none;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.benefits-list li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.benefits-list i {
+  color: var(--secondary);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Formulaires */
+.inscription-section,
+.mentorat-section,
+.don-section {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.inscription-section:nth-child(odd),
+.mentorat-section:nth-child(odd),
+.don-section:nth-child(odd) {
+  background-color: var(--primary-light);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.container p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid var(--secondary);
+  border-radius: var(--border-radius);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 3px rgba(178, 59, 59, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Media Queries pour la section Participer */
+@media (max-width: 768px) {
+  .participer-hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .participation-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .inscription-section,
+  .mentorat-section,
+  .don-section {
+    padding: 3rem 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.7rem 0.9rem;
+  }
+}

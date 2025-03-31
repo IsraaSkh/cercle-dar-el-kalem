@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez les objectifs du Cercle Dar El Kalem pour promouvoir la francophonie en Tunisie." />
+  <title>Nos Objectifs | Cercle Dar El Kalem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="kalimoun-logo.png" alt="Logo Kalimoun" class="logo">
+        <h1>Le Cercle Dar El Kalem</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="objectifs.html" class="active">Nos objectifs</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="participer.html">Participer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="objectifs-hero fadeInUp">
+      <h2>Nos Objectifs</h2>
+      <p>Promouvoir et renforcer les liens culturels et linguistiques entre la Tunisie et l'espace francophone</p>
+    </section>
+
+    <section class="objectifs-grid fadeInUp">
+      <div class="objectif-card">
+        <i class="fas fa-book-reader"></i>
+        <h3>Promotion de la Littérature</h3>
+        <p>Organiser des rencontres littéraires, des ateliers d'écriture et des conférences pour encourager la création littéraire en français.</p>
+      </div>
+
+      <div class="objectif-card">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Formation et Éducation</h3>
+        <p>Développer des programmes de formation en français et des échanges culturels entre la Tunisie et la France.</p>
+      </div>
+
+      <div class="objectif-card">
+        <i class="fas fa-users"></i>
+        <h3>Dialogue Interculturel</h3>
+        <p>Faciliter les échanges entre les communautés francophones et promouvoir le dialogue interculturel.</p>
+      </div>
+
+      <div class="objectif-card">
+        <i class="fas fa-globe"></i>
+        <h3>Rayonnement International</h3>
+        <p>Renforcer la présence de la Tunisie dans l'espace francophone et promouvoir son patrimoine culturel.</p>
+      </div>
+    </section>
+
+    <section class="actualites-preview fadeInUp">
+      <h2>Actualités</h2>
+      <div class="actualites-grid">
+        <div class="actualite-card">
+          <h3>À la recherche des Jeunes Voix de la Tunisie Francophone</h3>
+          <p>Découvrez notre action phare pour mettre en lumière les talents de la nouvelle génération.</p>
+          <a href="actualites.html" class="cta-button">Lire l'article complet</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:Skahisraa@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Votre e-mail" class="newsletter-input" required>
+      <button type="submit" class="cta-button">S'inscrire</button>
+    </form>
+    <p>Envie de nous soutenir ? Contactez-nous ou devenez mentor</p>
+    <p>Whatsapp: (+33)0663449748 | E-mail: Skahisraa@gmail.com</p>
+    <p>Tous Droits Réservés – Cercle Dar El Kalam</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fadeInUp').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html> 
