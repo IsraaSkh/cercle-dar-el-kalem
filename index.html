@@ -3,203 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Le Cercle Dar El Kalem - Une initiative culturelle pour connecter la Tunisie au monde francophone" />
   <title>Le Cercle Dar El Kalem</title>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 1rem;
-    }
-
-    main {
-      margin-top: 150px;
-      padding: 0;
-    }
-
-    section {
-      min-height: auto;
-      padding: 40px;
-      margin: 0;
-      box-sizing: border-box;
-      position: relative;
-    }
-
-    section:nth-child(odd) {
-      background-color: #f9f9f9;
-    }
-
-    section:nth-child(even) {
-      background-color: white;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-      z-index: 100;
-    }
-
-    @media (min-width: 768px) {
-      section {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-    }
-
-    @media print {
-      section {
-        page-break-before: always;
-        page-break-after: always;
-        page-break-inside: avoid;
-      }
-      section:first-of-type {
-        page-break-before: avoid;
-      }
-    }
-  </style>
 </head>
 <body>
+  <div class="language-selector">
+    <select onchange="changeLanguage(this.value)">
+      <option value="fr">FR</option>
+      <option value="en">EN</option>
+      <option value="ar">AR</option>
+    </select>
+  </div>
 
   <header>
-    <h1>Le Cercle Dar El Kalem</h1>
-    <nav>
-      <ul>
-        <li><a href="#qui">QUI SOMMES-NOUS ?</a></li>
-        <li><a href="#pourquoi-cercle">POURQUOI CE CERCLE ?</a></li>
-        <li><a href="#defendons">CE QUE NOUS DÉFENDONS</a></li>
-        <li><a href="#adresse">A QUI S'ADRESSE LE CERCLE ?</a></li>
-        <li><a href="#action">PREMIÈRE ACTION OFFICIELLE</a></li>
-        <li><a href="#pourquoi">POURQUOI ?</a></li>
-        <li><a href="#cherchons">CE QUE NOUS CHERCHONS</a></li>
-        <li><a href="#offrons">CE QUE NOUS VOUS OFFRONS</a></li>
-        <li><a href="#participer">COMMENT PARTICIPER ?</a></li>
-        <li><a href="#promesse">NOTRE PROMESSE</a></li>
-      </ul>
-    </nav>
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="kalimoun-logo.png" alt="Logo Kalimoun" class="logo">
+        <h1>Le Cercle Dar El Kalem</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Accueil</a></li>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="objectifs.html">Nos objectifs</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="participer.html">Participer</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="qui">
-      <h2>QUI SOMMES-NOUS ?</h2>
-      <p><strong>Manifeste fondateur du Cercle Bayt El Kalam</strong><br>
-      « La Tunisie est un carrefour. De tout temps, même au cours des siècles les plus sombres, elle a eu une élite brillante, douée d'une culture extrêmement variée : politique, économique, littéraire, juridique. »<br>
-      — Habib Bourguiba</p>
-      <p>Le Cercle Bayt el Kalem est une initiative citoyenne, culturelle et intergénérationnelle, née du besoin de raviver les liens profonds entre la Tunisie et l'espace francophone, en particulier la France.<br>
-      Fondé par des membres de la diaspora franco-tunisienne, ce cercle est un espace de transmission, de coopération et de rayonnement pour celles et ceux qui, d'ici ou de là-bas, portent la Tunisie dans leur cœur.<br>
-      Nous sommes jeunes et moins jeunes, issus du monde politique, scientifique, culturel, académique ou tout simplement passionnés. Nous partageons une conviction : la culture est une passerelle, et la Tunisie a encore tant à apporter au monde francophone.</p>
+    <section class="hero fadeInUp">
+      <h2>Le Cercle Dar El Kalem</h2>
+      <p>Une initiative citoyenne pour raviver les liens entre la Tunisie et l'espace francophone</p>
+      <blockquote class="hero-quote">
+        <em>"La langue française est une fenêtre ouverte sur le monde, un outil de dialogue et de compréhension mutuelle."</em><br>
+        — Habib Bourguiba
+      </blockquote>
+      <a href="participer.html" class="cta-button">Rejoignez-nous</a>
     </section>
 
-    <section id="pourquoi-cercle">
-      <h2>POURQUOI CE CERCLE ?</h2>
-      <p>Parce que nous refusons que les talents tunisiens s'ignorent.<br>
-      Parce que trop de figures brillantes – artistes, chercheurs, entrepreneurs, élus, citoyens engagés – agissent isolément.<br>
-      Parce que notre double culture franco-tunisienne est une richesse, mais reste trop souvent fragmentée.<br>
-      Parce que la jeunesse franco-tunisienne mérite un espace pour se réconcilier avec son histoire et son héritage.</p>
-      <p>Nous avons créé ce cercle pour connecter, transmettre, faire rayonner.<br>
-      Pour renforcer la place de la Tunisie dans la Francophonie et renouer avec l'ambition des pères fondateurs, Léopold Sédar Senghor et Habib Bourguiba, qui ont vu dans la langue française un outil de solidarité et de développement. Nous visons à mettre la langue française au service de la solidarité, du développement et du dialogue entre les peuples.</p>
+    <section class="mission fadeInUp">
+      <h2>Notre Mission</h2>
+      <p>
+        Nous sommes un espace de transmission, de coopération et de rayonnement pour celles et ceux qui, d'ici ou de là-bas, portent la Tunisie dans leur cœur. Notre mission est de raviver les liens profonds entre la Tunisie et l'espace francophone, en particulier la France.
+      </p>
     </section>
 
-    <section id="defendons">
-      <h2>CE QUE NOUS DÉFENDONS</h2>
-      <ul>
-        <li>Une Tunisie francophone, fière et souveraine, pleinement actrice de la coopération multilatérale.</li>
-        <li>Une diaspora engagée et structurée, qui joue un rôle moteur dans les échanges culturels, intellectuels et économiques.</li>
-        <li>Un dialogue intergénérationnel, entre mémoire et avenir, entre héritage et innovation.</li>
-        <li>Une francophonie plurielle et inclusive, où la jeunesse a toute sa place.</li>
-        <li>La panthéonisation de Gisèle Halimi, comme symbole de cette mémoire partagée et de notre combat pour la justice et l'égalité.</li>
-      </ul>
+    <section class="join-section fadeInUp">
+      <div class="join-card">
+        <h3>Jeunes talents</h3>
+        <p>Rejoins les projets du Cercle</p>
+        <a href="participer.html" class="cta-button">Participer</a>
+      </div>
+      <div class="join-card">
+        <h3>Mentors</h3>
+        <p>Transmets ton expérience à la nouvelle génération</p>
+        <a href="participer.html#mentorat" class="cta-button">Devenir mentor</a>
+      </div>
+      <div class="join-card">
+        <h3>Soutiens</h3>
+        <p>Faites un don pour soutenir nos actions</p>
+        <a href="participer.html#don" class="cta-button">Faire un don</a>
+      </div>
     </section>
 
-    <section id="adresse">
-      <h2>À QUI S'ADRESSE LE CERCLE ?</h2>
-      <p>À tous ceux qui aiment la Tunisie, qu'ils soient tunisiens, français, ou d'ailleurs.<br>
-      À ceux qui veulent renouer avec leur culture, partager une passion ou tisser des ponts entre les mondes.<br>
-      Aux acteurs publics, aux artistes, aux enseignants, aux étudiants, aux chercheurs, aux rêveurs, aux bâtisseurs.<br>
-      À tous ceux qui pensent que nos deux rives ont encore beaucoup à s'apporter.</p>
-    </section>
-
-    <section id="action">
-      <h2>PREMIÈRE ACTION OFFICIELLE DU CERCLE HABIB BOURGUIBA</h2>
-      <p><strong>À la recherche des Jeunes Voix de la Tunisie Francophone</strong><br>
-      "Nous sommes cette génération qui cherche à ne pas perdre ses racines, ni à renier ses ailes."</p>
-      <p>Entre la France et la Tunisie, une génération entière évolue dans un entre-deux culturel et linguistique, riche mais souvent peu reconnu. Certains jeunes grandissent en France avec un lien distendu à la langue arabe, tandis que d'autres en Tunisie s'expriment couramment en français sans nécessairement se sentir connectés aux débats qui animent les sociétés francophones...</p>
-    </section>
-
-    <section id="pourquoi">
-      <h2>POURQUOI ?</h2>
-      <p>Parce qu'au dernier Sommet de la Francophonie à Djerba, nous avons cherché nos représentants et ne les avons pas trouvés.<br>
-      Parce que dans les institutions, dans les médias, dans les grandes conférences, la jeunesse tunisienne francophone est absente.<br>
-      Et pourtant… nous sommes là. Nous lisons, nous créons, nous débattons, nous rêvons. Il fallait juste un espace pour nous rassembler. Le voilà.</p>
-    </section>
-
-    <section id="cherchons">
-      <h2>CE QUE NOUS CHERCHONS</h2>
-      <p>Des jeunes entre 18 et 30 ans, en France, en Tunisie ou ailleurs, qui :</p>
-      <ul>
-        <li>aiment la Tunisie, même de loin,</li>
-        <li>croient à la puissance de la langue française comme pont, pas comme barrière,</li>
-        <li>veulent représenter leur génération, défendre des idées, faire entendre des voix,</li>
-        <li>sont artistes, étudiants, militants, lecteurs, voyageurs, curieux ou simplement inspirés par un lien entre les deux rives.</li>
-      </ul>
-    </section>
-
-    <section id="offrons">
-      <h2>CE QUE NOUS VOUS OFFRONS</h2>
-      <ul>
-        <li>Un titre symbolique mais fort : Jeune Ambassadeur Francophone Tunisien</li>
-        <li>Une lettre officielle de nomination signée par le Cercle</li>
-        <li>Une mise en lumière de votre portrait, vos idées ou votre parcours</li>
-        <li>L'accès à un réseau naissant de jeunes leaders</li>
-        <li>Des rencontres, des échanges, peut-être une future rencontre à Paris ou à Tunis</li>
-        <li>Une place pour représenter la Tunisie dans des événements internationaux francophones</li>
-        <li>Et surtout : une famille, une voix, un espace pour ne pas choisir entre deux identités.</li>
-      </ul>
-    </section>
-
-    <section id="participer">
-      <h2>COMMENT PARTICIPER ?</h2>
-      <p>Très bientôt, un formulaire sera mis en ligne avec quelques questions :</p>
-      <ul>
-        <li>Qui êtes-vous ?</li>
-        <li>Pourquoi voulez-vous faire partie de cette aventure ?</li>
-        <li>Qu'est-ce que la Tunisie francophone représente pour vous ?</li>
-      </ul>
-    </section>
-
-    <section id="promesse">
-      <h2>NOTRE PROMESSE</h2>
-      <p>Nous ne cherchons pas "les meilleurs CV".<br>
-      Nous cherchons des voix vraies, des regards engagés, des passions sincères.<br>
-      Le Cercle Habib Bourguiba commence petit, mais avec une conviction immense :<br>
-      Nous sommes bien plus nombreux que ce que l'on croit. Il est temps de nous retrouver.</p>
+    <section class="actualites-preview fadeInUp">
+      <h2>Actualités</h2>
+      <div class="actualites-grid">
+        <div class="actualite-card">
+          <h3>À la recherche des Jeunes Voix de la Tunisie Francophone</h3>
+          <p>Découvrez notre action phare pour mettre en lumière les talents de la nouvelle génération.</p>
+          <a href="actualites.html" class="cta-button">Lire l'article complet</a>
+        </div>
+      </div>
     </section>
   </main>
 
+  <div class="closure-notice">
+    🗓️ Clôture des candidatures : 30 Juin 2025
+  </div>
+
   <footer>
-    <p>La francophonie vécue par ceux qui la parlent autrement.<br>
-    Whatsapp: (+33)0663449748 | E-mail: Skahisraa@gmail.com<br>
-    &copy; 2025 Cercle Dar El Kalam. Tous droits réservés.</p>
+    <div class="social-links">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:Skahisraa@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Votre e-mail" class="newsletter-input" required>
+      <button type="submit" class="cta-button">S'inscrire</button>
+    </form>
+    <p>Envie de nous soutenir ? Contactez-nous ou devenez mentor</p>
+    <p>Whatsapp: (+33)0663449748 | E-mail: Skahisraa@gmail.com</p>
+    <p>Tous Droits Réservés – Cercle Dar El Kalam</p>
   </footer>
 
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fadeInUp').forEach((el) => observer.observe(el));
+
+    // Changement de langue
+    function changeLanguage(lang) {
+      // À implémenter plus tard
+      console.log('Changement de langue vers:', lang);
+    }
+  </script>
 </body>
 </html>
