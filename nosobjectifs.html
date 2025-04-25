@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez les objectifs du Cercle Dar El Kalem, un espace dédié à la valorisation de la francophonie, de la mémoire tunisienne et de l’engagement culturel." />
+  <title>Nos Objectifs | Cercle Dar El Kalem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="language-selector">
+    <select onchange="changeLanguage(this.value)">
+      <option value="fr">Français</option>
+      <option value="ar">العربية</option>
+    </select>
+  </div>
+
+  <header>
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="kalimoun-logo.png" alt="Logo Kalimoun" class="logo">
+        <h1>Le Cercle Dar El Kalem</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous</a></li>
+          <li><a href="objectifs.html" class="active">Nos objectifs</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="participer.html">Participer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="objectifs-hero fadeInUp">
+      <h2>Nos Objectifs</h2>
+      <div class="objectifs-banner">
+        <p>🎯 "Notre mission : faire entendre les voix plurielles de la francophonie tunisienne et valoriser les ponts entre les deux rives."</p>
+      </div>
+    </section>
+
+    <section class="objectifs-section fadeInUp">
+      <div class="objectifs-grid">
+        <article class="objectif-card">
+          <h3>1. Promouvoir la francophonie tunisienne</h3>
+          <p>
+            Mettre en lumière les écrivains, penseurs, artistes et jeunes talents qui s’expriment en français tout en portant l’identité tunisienne.
+          </p>
+        </article>
+
+        <article class="objectif-card">
+          <h3>2. Valoriser la mémoire et l’héritage de Habib Bourguiba</h3>
+          <p>
+            Encourager une réappropriation critique et créative de la pensée bourguibienne, en particulier son rapport à la langue française, à la modernité et à l’éducation.
+          </p>
+        </article>
+
+        <article class="objectif-card">
+          <h3>3. Créer un espace de dialogue entre générations</h3>
+          <p>
+            Favoriser la transmission intergénérationnelle des savoirs, des récits et des luttes, dans un esprit d’écoute et de co-construction.
+          </p>
+        </article>
+
+        <article class="objectif-card">
+          <h3>4. Renforcer les liens culturels entre la Tunisie et la France</h3>
+          <p>
+            Construire des ponts durables entre les deux pays à travers des projets artistiques, éducatifs et citoyens portés par la jeunesse.
+          </p>
+        </article>
+
+        <article class="objectif-card">
+          <h3>5. Offrir une tribune aux voix invisibilisées</h3>
+          <p>
+            Donner la parole aux jeunes issus de la diaspora, aux femmes, aux artistes engagés et à toutes celles et ceux qui souhaitent raconter la Tunisie autrement.
+          </p>
+        </article>
+
+        <article class="objectif-card">
+          <h3>6. Favoriser l’engagement citoyen et culturel</h3>
+          <p>
+            Inciter les jeunes à s’impliquer dans des initiatives concrètes, autour de la mémoire, de la langue, du dialogue interculturel et de l’action solidaire.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Le Cercle Dar El Kalem. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    function changeLanguage(lang) {
+      // Fonction de changement de langue à implémenter
+      alert("Fonction de changement de langue à venir.");
+    }
+
+    function toggleArticle(button) {
+      const article = button.closest('.article-card');
+      article.classList.toggle('expanded');
+    }
+  </script>
+</body>
+</html>
