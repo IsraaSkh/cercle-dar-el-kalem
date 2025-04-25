@@ -91,20 +91,43 @@
   </main>
 
   <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Le Cercle Dar El Kalem. Tous droits réservés.</p>
+      <div class="closure-notice">
+    🗓️ Clôture des candidatures : 30 Juin 2025
+  </div>
+
+  <footer>
+    <div class="social-links">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:Skahisraa@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
+    <p>La francophonie vécue par ceux qui la parlent autrement.</p>
+    <p>Whatsapp: (+33)0663449748 | E-mail: Skahisraa@gmail.com</p>
+    <p>Tous Droits Réservés – Cercle Dar El Kalam</p>
   </footer>
 
   <script>
-    function changeLanguage(lang) {
-      // Fonction de changement de langue à implémenter
-      alert("Fonction de changement de langue à venir.");
-    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fadeInUp').forEach((el) => observer.observe(el));
 
     function toggleArticle(button) {
       const article = button.closest('.article-card');
-      article.classList.toggle('expanded');
+      const content = article.querySelector('.article-full-content');
+      const isExpanded = content.style.display === 'block';
+      
+      content.style.display = isExpanded ? 'none' : 'block';
+      button.textContent = isExpanded ? 'Lire plus' : 'Lire moins';
+      
+      if (!isExpanded) {
+        content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   </script>
 </body>
